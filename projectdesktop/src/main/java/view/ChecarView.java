@@ -28,7 +28,7 @@ public class ChecarView extends javax.swing.JFrame {
 
         btVoltar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaSeries = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         btChecar = new javax.swing.JButton();
 
@@ -46,7 +46,7 @@ public class ChecarView extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAreaSeries.setViewportView(jTextArea1);
 
         btChecar.setText("Checar");
 
@@ -67,7 +67,7 @@ public class ChecarView extends javax.swing.JFrame {
                         .addComponent(lblTitulo)
                         .addGap(192, 192, 192))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAreaSeries, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))))
         );
         layout.setVerticalGroup(
@@ -76,7 +76,7 @@ public class ChecarView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addComponent(txtAreaSeries, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btVoltar)
@@ -130,8 +130,8 @@ public class ChecarView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btChecar;
     private javax.swing.JButton btVoltar;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JScrollPane txtAreaSeries;
     // End of variables declaration//GEN-END:variables
 }

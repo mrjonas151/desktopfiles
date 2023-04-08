@@ -29,6 +29,12 @@ public class EditarView extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
+        lblObs = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        TxtAreaSerie = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        btChecar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,26 +50,62 @@ public class EditarView extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTitulo.setText("Atulização de séries");
 
+        lblObs.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        lblObs.setText("Obs: Cheque o ID do conteúdo ");
+
+        lblId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblId.setText("Digite o ID:");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        TxtAreaSerie.setViewportView(jTextArea1);
+
+        btChecar.setText("Checar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTitulo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btVoltar)
-                        .addGap(30, 30, 30)
-                        .addComponent(btEditar)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                        .addGap(98, 98, 98)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblTitulo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btVoltar)
+                                .addGap(30, 30, 30)
+                                .addComponent(btEditar))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblObs, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(lblId)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(TxtAreaSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblObs)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblId)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btChecar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TxtAreaSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btVoltar)
                     .addComponent(btEditar))
@@ -114,8 +156,14 @@ public class EditarView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane TxtAreaSerie;
+    private javax.swing.JButton btChecar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblObs;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }

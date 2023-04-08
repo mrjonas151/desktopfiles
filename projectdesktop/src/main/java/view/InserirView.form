@@ -24,19 +24,46 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="btVoltar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="btInserir" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNota" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPlataforma" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDiretor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblGenero" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtNota" alignment="1" pref="142" max="32767" attributes="0"/>
+                          <Component id="txtPlataforma" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtDiretor" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtGenero" max="32767" attributes="0"/>
+                          <Component id="txtNome" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtId" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                      <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lblIdioma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="txtIdioma" min="-2" pref="142" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="120" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btVoltar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btInserir" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,12 +72,47 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="226" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btInserir" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblIdioma" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdioma" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblGenero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtGenero" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblDiretor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDiretor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPlataforma" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPlataforma" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNota" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNota" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,6 +138,76 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastro de s&#xe9;ries"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblID">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ID:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNome">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nome:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblIdioma">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Idioma original:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblGenero">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="G&#xea;nero:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDiretor">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Diretor:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPlataforma">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Plataforma:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNota">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nota Imdb:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtId">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtGenero">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtIdioma">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNome">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNota">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPlataforma">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDiretor">
     </Component>
   </SubComponents>
 </Form>

@@ -29,6 +29,20 @@ public class InserirView extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
         btInserir = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        lblIdioma = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        lblDiretor = new javax.swing.JLabel();
+        lblPlataforma = new javax.swing.JLabel();
+        lblNota = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        txtGenero = new javax.swing.JTextField();
+        txtIdioma = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtNota = new javax.swing.JTextField();
+        txtPlataforma = new javax.swing.JTextField();
+        txtDiretor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,32 +58,103 @@ public class InserirView extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTitulo.setText("Cadastro de séries");
 
+        lblID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblID.setText("ID:");
+
+        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNome.setText("Nome:");
+
+        lblIdioma.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblIdioma.setText("Idioma original:");
+
+        lblGenero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblGenero.setText("Gênero:");
+
+        lblDiretor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblDiretor.setText("Diretor:");
+
+        lblPlataforma.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPlataforma.setText("Plataforma:");
+
+        lblNota.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNota.setText("Nota Imdb:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblID)
+                            .addComponent(lblNota)
+                            .addComponent(lblPlataforma)
+                            .addComponent(lblDiretor)
+                            .addComponent(lblGenero)
+                            .addComponent(lblNome))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(txtPlataforma, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtDiretor, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtGenero)
+                            .addComponent(txtNome, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtId)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblIdioma)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(171, 171, 171))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btVoltar)
-                        .addGap(36, 36, 36)
+                        .addGap(18, 18, 18)
                         .addComponent(btInserir))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(lblTitulo)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                    .addComponent(lblTitulo))
+                .addGap(140, 140, 140))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btVoltar)
-                    .addComponent(btInserir))
-                .addGap(25, 25, 25))
+                    .addComponent(lblID)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNome)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdioma)
+                    .addComponent(txtIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGenero)
+                    .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDiretor)
+                    .addComponent(txtDiretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPlataforma)
+                    .addComponent(txtPlataforma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNota)
+                    .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btInserir)
+                    .addComponent(btVoltar))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -118,6 +203,20 @@ public class InserirView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btInserir;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JLabel lblDiretor;
+    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblIdioma;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblNota;
+    private javax.swing.JLabel lblPlataforma;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtDiretor;
+    private javax.swing.JTextField txtGenero;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtIdioma;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNota;
+    private javax.swing.JTextField txtPlataforma;
     // End of variables declaration//GEN-END:variables
 }

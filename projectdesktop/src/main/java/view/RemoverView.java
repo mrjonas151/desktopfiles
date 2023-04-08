@@ -30,6 +30,11 @@ public class RemoverView extends javax.swing.JFrame {
         btRemover = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         lblObs = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        btChecar = new javax.swing.JButton();
+        txtASerie = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +53,15 @@ public class RemoverView extends javax.swing.JFrame {
         lblObs.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         lblObs.setText("Obs: Cheque o ID do conteúdo ");
 
+        lblId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblId.setText("Digite o ID:");
+
+        btChecar.setText("Checar");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        txtASerie.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -57,16 +71,25 @@ public class RemoverView extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(129, 129, 129))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(btVoltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btRemover))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblObs)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtASerie, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(121, 121, 121)
+                            .addComponent(btVoltar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btRemover))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(lblObs))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(lblId)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +98,14 @@ public class RemoverView extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(17, 17, 17)
                 .addComponent(lblObs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblId)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btChecar))
+                .addGap(18, 18, 18)
+                .addComponent(txtASerie, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btVoltar)
                     .addComponent(btRemover))
@@ -126,9 +156,14 @@ public class RemoverView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btChecar;
     private javax.swing.JButton btRemover;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblObs;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JScrollPane txtASerie;
+    private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }

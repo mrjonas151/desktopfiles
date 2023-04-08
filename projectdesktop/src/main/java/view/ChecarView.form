@@ -38,7 +38,7 @@
                       <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="331" max="-2" attributes="0"/>
+                      <Component id="txtAreaSeries" min="-2" pref="331" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -51,7 +51,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="247" max="32767" attributes="0"/>
+              <Component id="txtAreaSeries" pref="247" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -79,7 +79,7 @@
         <Property name="text" type="java.lang.String" value="S&#xe9;ries cadastradas"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+    <Container class="javax.swing.JScrollPane" name="txtAreaSeries">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
