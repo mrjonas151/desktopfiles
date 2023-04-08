@@ -132,6 +132,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Inserir s&#xe9;ries"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btInserirMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btEditar">
           <Properties>
@@ -143,6 +146,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Editar s&#xe9;ries"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btEditarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btRemover">
           <Properties>
@@ -154,6 +160,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Remover s&#xe9;ries"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btRemoverMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btChecar">
           <Properties>
@@ -165,6 +174,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Checar s&#xe9;ries"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btChecarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblWelcome">
           <Properties>

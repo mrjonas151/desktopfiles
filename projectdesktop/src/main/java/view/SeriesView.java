@@ -57,18 +57,38 @@ public class SeriesView extends javax.swing.JFrame {
         btInserir.setBackground(new java.awt.Color(153, 255, 153));
         btInserir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btInserir.setText("Inserir séries");
+        btInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btInserirMouseClicked(evt);
+            }
+        });
 
         btEditar.setBackground(new java.awt.Color(255, 255, 153));
         btEditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btEditar.setText("Editar séries");
+        btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btEditarMouseClicked(evt);
+            }
+        });
 
         btRemover.setBackground(new java.awt.Color(255, 153, 153));
         btRemover.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btRemover.setText("Remover séries");
+        btRemover.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btRemoverMouseClicked(evt);
+            }
+        });
 
         btChecar.setBackground(new java.awt.Color(102, 255, 255));
         btChecar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btChecar.setText("Checar séries");
+        btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btChecarMouseClicked(evt);
+            }
+        });
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblWelcome.setText("Bem-vindo(a)");
@@ -145,6 +165,26 @@ public class SeriesView extends javax.swing.JFrame {
     private void btSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSairMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btSairMouseClicked
+
+    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
+        this.dispose();
+        new ChecarView().setVisible(true);
+    }//GEN-LAST:event_btChecarMouseClicked
+
+    private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
+        this.dispose();
+        new EditarView().setVisible(true);
+    }//GEN-LAST:event_btEditarMouseClicked
+
+    private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
+        this.dispose();
+        new RemoverView().setVisible(true);
+    }//GEN-LAST:event_btRemoverMouseClicked
+
+    private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
+        this.dispose();
+        new InserirView().setVisible(true);
+    }//GEN-LAST:event_btInserirMouseClicked
 
     /**
      * @param args the command line arguments
