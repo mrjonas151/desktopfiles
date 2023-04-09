@@ -39,8 +39,8 @@ public class SeriesView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciador de séries");
 
-        btSair.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btSair.setText("Sair");
+        btSair.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        btSair.setText("⬅️ Sair");
         btSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btSairMouseClicked(evt);
@@ -53,8 +53,8 @@ public class SeriesView extends javax.swing.JFrame {
         });
 
         btInserir.setBackground(new java.awt.Color(153, 255, 153));
-        btInserir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btInserir.setText("Inserir séries");
+        btInserir.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        btInserir.setText("➕ Inserir séries");
         btInserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btInserirMouseClicked(evt);
@@ -62,17 +62,22 @@ public class SeriesView extends javax.swing.JFrame {
         });
 
         btEditar.setBackground(new java.awt.Color(255, 255, 153));
-        btEditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btEditar.setText("Editar séries");
+        btEditar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        btEditar.setText("✏ ️Editar séries");
         btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btEditarMouseClicked(evt);
             }
         });
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
 
         btRemover.setBackground(new java.awt.Color(255, 153, 153));
-        btRemover.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btRemover.setText("Remover séries");
+        btRemover.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        btRemover.setText("❌ Remover séries");
         btRemover.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btRemoverMouseClicked(evt);
@@ -80,8 +85,8 @@ public class SeriesView extends javax.swing.JFrame {
         });
 
         btChecar.setBackground(new java.awt.Color(102, 255, 255));
-        btChecar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btChecar.setText("Checar séries");
+        btChecar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        btChecar.setText("📖 Checar séries");
         btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btChecarMouseClicked(evt);
@@ -91,34 +96,34 @@ public class SeriesView extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 153, 255));
         jPanel2.setForeground(new java.awt.Color(255, 51, 51));
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTitulo.setText("Gerenciamento de Séries");
+        lblTitulo.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        lblTitulo.setText("Gerenciamento de Séries 📺");
 
-        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblWelcome.setText("Bem-vindo(a)");
+        lblWelcome.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        lblWelcome.setText("Bem-vindo(a) 💫");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(lblTitulo)
-                        .addGap(87, 87, 87))
+                        .addGap(72, 72, 72))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(lblWelcome)
-                        .addGap(149, 149, 149))))
+                        .addGap(135, 135, 135))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblWelcome)
-                .addGap(30, 30, 30))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -129,7 +134,7 @@ public class SeriesView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btInserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btRemover, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
@@ -137,14 +142,14 @@ public class SeriesView extends javax.swing.JFrame {
                 .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
+                .addGap(157, 157, 157)
                 .addComponent(btSair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,9 +158,9 @@ public class SeriesView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGap(45, 45, 45)
                 .addComponent(btSair)
-                .addGap(17, 17, 17))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,6 +204,10 @@ public class SeriesView extends javax.swing.JFrame {
         this.dispose();
         new InserirView().setVisible(true);
     }//GEN-LAST:event_btInserirMouseClicked
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEditarActionPerformed
 
     /**
      * @param args the command line arguments
