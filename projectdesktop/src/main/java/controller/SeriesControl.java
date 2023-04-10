@@ -10,4 +10,19 @@ package controller;
  */
 public class SeriesControl {
     
+    public static boolean cadastrarSerie(){
+        return true;
+    }
+    
+    public static boolean removerSerie(){
+        return true;
+    }
+    
+    public static boolean atualizarSerie(){
+        return true;
+    }
+    
+    public static boolean lerSerie(){
+        return true;
+    }
 }
