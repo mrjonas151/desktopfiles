@@ -62,22 +62,93 @@ public class SeriesControl {
         }  
     }
     
-    public static boolean removerSerie(int id){
-        List<SeriesModel> listaSeries = new ArrayList<>();
-        
+    public static String removerSerie(int id){
         String series = lerSerie();
+        String[] records = series.split("\n\n");
         
+        List<Map<String, String>> listaSeries = new ArrayList<>();
         
-        return true;
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaSeries.add(map);
+        }
+        
+        for (Map<String, String> record : listaSeries) {
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                listaSeries.remove(record);
+            }   
+        }
+        
+        for (Map<String, String> record : listaSeries) {
+            StringBuilder sb = new StringBuilder();
+                sb.append("ID: ");
+                sb.append(record.get("ID"));
+                sb.append("\n");
+                sb.append("NOME: ");
+                sb.append(record.get("NOME"));
+                sb.append("\n");
+                sb.append("DIRETOR: ");
+                sb.append(record.get("DIRETOR"));
+                sb.append("\n");
+                sb.append("AVALIACAO: ");
+                sb.append(record.get("AVALIACAO"));
+                sb.append("\n");
+                sb.append("TEMPORADAS: ");
+                sb.append(record.get("TEMPORADAS"));
+                sb.append("\n");
+                sb.append("IDIOMA: ");
+                sb.append(record.get("IDIOMA"));
+                sb.append("\n");
+                sb.append("GENERO: ");
+                sb.append(record.get("GENERO"));
+                sb.append("\n");
+                sb.append("PLATAFORMA: ");
+                sb.append(record.get("PLATAFORMA"));
+                sb.append("\n");
+                sb.append("\n");
+                String resultado = sb.toString();
+                return resultado;
+        }
+        
+        return "ID nao encontrado!!";
     }
     
     public static boolean atualizarSerie(int id){
-        List<SeriesModel> listaSeries = new ArrayList<>();
-        
         String series = lerSerie();
+        String[] records = series.split("\n\n");
         
+        List<Map<String, String>> listaSeries = new ArrayList<>();
         
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaSeries.add(map);
+        }
+        
+        for (Map<String, String> record : listaSeries) {
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                System.out.println("id encontrado!!");
+            }
+        }
         return true;
+        
     }
     
     public static String lerSeriePorId(int id ){
@@ -126,6 +197,7 @@ public class SeriesControl {
                 sb.append("\n");
                 sb.append("PLATAFORMA: ");
                 sb.append(record.get("PLATAFORMA"));
+                sb.append("\n");
                 sb.append("\n");
                 String resultado = sb.toString();
                 System.out.println(resultado);

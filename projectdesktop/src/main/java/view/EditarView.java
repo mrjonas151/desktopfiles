@@ -33,11 +33,25 @@ public class EditarView extends javax.swing.JFrame {
         lblObs = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
-        TxtAreaSerie = new javax.swing.JScrollPane();
-        txtASeries = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         btChecar = new javax.swing.JButton();
+        txtId1 = new javax.swing.JTextField();
+        txtTemporadas = new javax.swing.JTextField();
+        txtGenero = new javax.swing.JTextField();
+        txtIdioma = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtNota = new javax.swing.JTextField();
+        txtPlataforma = new javax.swing.JTextField();
+        txtDiretor = new javax.swing.JTextField();
+        lblID = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        lblTemporadas = new javax.swing.JLabel();
+        lblIdioma = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        lblDiretor = new javax.swing.JLabel();
+        lblPlataforma = new javax.swing.JLabel();
+        lblNota = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,10 +71,6 @@ public class EditarView extends javax.swing.JFrame {
         lblId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblId.setText("Digite o ID:");
 
-        txtASeries.setColumns(20);
-        txtASeries.setRows(5);
-        TxtAreaSerie.setViewportView(txtASeries);
-
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -70,17 +80,17 @@ public class EditarView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(201, 201, 201))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
-                .addGap(19, 19, 19))
+                .addGap(22, 22, 22))
         );
 
         btChecar.setForeground(new java.awt.Color(51, 51, 255));
@@ -90,6 +100,30 @@ public class EditarView extends javax.swing.JFrame {
                 btChecarMouseClicked(evt);
             }
         });
+
+        lblID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblID.setText("ID:");
+
+        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNome.setText("Nome:");
+
+        lblTemporadas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTemporadas.setText("Temporadas:");
+
+        lblIdioma.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblIdioma.setText("Idioma:");
+
+        lblGenero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblGenero.setText("Gênero:");
+
+        lblDiretor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblDiretor.setText("Diretor:");
+
+        lblPlataforma.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPlataforma.setText("Plataforma:");
+
+        lblNota.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNota.setText("Nota Imdb:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,20 +138,45 @@ public class EditarView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblObs)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblId)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblObs)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TxtAreaSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblGenero)
+                                    .addComponent(lblIdioma)
+                                    .addComponent(lblNome)
+                                    .addComponent(lblID))
+                                .addGap(25, 25, 25)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtIdioma)
+                                            .addComponent(txtNome)
+                                            .addComponent(txtGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
+                                        .addGap(44, 44, 44)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lblPlataforma)
+                                                    .addComponent(lblDiretor)
+                                                    .addComponent(lblNota))
+                                                .addGap(35, 35, 35)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(txtPlataforma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                                    .addComponent(txtDiretor, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtTemporadas, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtNota)))
+                                            .addComponent(lblTemporadas)))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
+                        .addGap(213, 213, 213)
                         .addComponent(btEditar)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,18 +184,47 @@ public class EditarView extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(lblObs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblId)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btChecar))
-                .addGap(18, 18, 18)
-                .addComponent(TxtAreaSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblID)
+                            .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNome)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblIdioma))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTemporadas)
+                            .addComponent(txtTemporadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDiretor)
+                            .addComponent(txtDiretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPlataforma)
+                            .addComponent(txtPlataforma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNota)
+                            .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblGenero))))
+                .addGap(39, 39, 39)
                 .addComponent(btEditar)
-                .addGap(18, 18, 18))
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -148,7 +236,7 @@ public class EditarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
+        //txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
     }//GEN-LAST:event_btChecarMouseClicked
 
     /**
@@ -187,15 +275,29 @@ public class EditarView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane TxtAreaSerie;
     private javax.swing.JButton btChecar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblDiretor;
+    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblIdioma;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblNota;
     private javax.swing.JLabel lblObs;
+    private javax.swing.JLabel lblPlataforma;
+    private javax.swing.JLabel lblTemporadas;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextArea txtASeries;
+    private javax.swing.JTextField txtDiretor;
+    private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtId1;
+    private javax.swing.JTextField txtIdioma;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNota;
+    private javax.swing.JTextField txtPlataforma;
+    private javax.swing.JTextField txtTemporadas;
     // End of variables declaration//GEN-END:variables
 }
