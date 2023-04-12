@@ -209,6 +209,46 @@ public class SeriesControl {
        return "ID nao encontrado!!";
     }
     
+    public static SeriesModel lerSeriePorId2(int id ){
+        SeriesModel serie = new SeriesModel();
+        String series = lerSerie();
+        String[] records = series.split("\n\n");
+        
+        List<Map<String, String>> listaSeries = new ArrayList<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaSeries.add(map);
+        }
+        for (Map<String, String> record : listaSeries) {
+            
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                serie.setId(record.get("ID"));
+                serie.setNome(record.get("NOME"));
+                serie.setAvaliacao(Double.parseDouble(record.get("AVALIACAO")));
+                serie.setDiretor(record.get("DIRETOR"));
+                serie.setGenero(record.get("GENERO"));
+                serie.setIdioma(record.get("IDIOMA"));
+                serie.setPlataforma(record.get("PLATAFORMA"));
+                serie.setTemporadas(Integer.parseInt(record.get(("TEMPORADAS"))));
+                        
+                return serie;
+            }
+        }
+        
+        
+       return null;
+    }
+    
     public static String teste(){
         String x = lerSerie();
         return x;

@@ -5,6 +5,7 @@
 package view;
 
 import controller.SeriesControl;
+import model.SeriesModel;
 
 /**
  *
@@ -236,9 +237,33 @@ public class EditarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        //txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
+        SeriesModel serie = SeriesControl.lerSeriePorId2(Integer.parseInt(txtId.getText()));
+        limpar();
+        
+        if(serie != null){
+            txtId1.setText(serie.getId());
+            txtNome.setText(serie.getNome());
+            txtIdioma.setText(serie.getIdioma());
+            txtGenero.setText(serie.getGenero());
+            txtTemporadas.setText(String.valueOf(serie.getTemporadas()));
+            txtDiretor.setText(serie.getDiretor());
+            txtPlataforma.setText(serie.getPlataforma());
+            txtNota.setText(String.valueOf(serie.getAvaliacao()));
+        }
     }//GEN-LAST:event_btChecarMouseClicked
-
+    
+    public void limpar(){
+        txtId1.setText("");
+        txtNome.setText("");
+        txtIdioma.setText("");
+        txtGenero.setText("");
+        txtTemporadas.setText("");
+        txtDiretor.setText("");
+        txtPlataforma.setText("");
+        txtNota.setText("");
+        txtId.requestFocus();
+       
+    }
     /**
      * @param args the command line arguments
      */
