@@ -4,12 +4,14 @@
  */
 package view;
 
+import controller.SeriesControl;
+import controller.SeriesControlArquivoTexto;
+
 /**
  *
  * @author jonas
  */
 public class ChecarView extends javax.swing.JFrame {
-
     /**
      * Creates new form ChecarView
      */
@@ -37,7 +39,6 @@ public class ChecarView extends javax.swing.JFrame {
 
         btVoltar.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         btVoltar.setText("⬅️ Voltar");
-        btVoltar.setActionCommand("⬅️ Voltar");
         btVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btVoltarMouseClicked(evt);
@@ -45,6 +46,11 @@ public class ChecarView extends javax.swing.JFrame {
         });
 
         btChecar.setText("Checar 📖");
+        btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btChecarMouseClicked(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -105,6 +111,10 @@ public class ChecarView extends javax.swing.JFrame {
         this.dispose();
         new SeriesView().setVisible(true);
     }//GEN-LAST:event_btVoltarMouseClicked
+
+    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
+        txtASeries.setText(SeriesControl.lerSerie());
+    }//GEN-LAST:event_btChecarMouseClicked
 
     /**
      * @param args the command line arguments

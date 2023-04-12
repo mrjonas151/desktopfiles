@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.SeriesControl;
+
 /**
  *
  * @author jonas
@@ -32,7 +34,7 @@ public class RemoverView extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         btChecar = new javax.swing.JButton();
         txtASerie = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtASeries = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblObs = new javax.swing.JLabel();
@@ -61,10 +63,15 @@ public class RemoverView extends javax.swing.JFrame {
 
         btChecar.setForeground(new java.awt.Color(51, 51, 255));
         btChecar.setText("🔎");
+        btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btChecarMouseClicked(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        txtASerie.setViewportView(jTextArea1);
+        txtASeries.setColumns(20);
+        txtASeries.setRows(5);
+        txtASerie.setViewportView(txtASeries);
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -89,7 +96,7 @@ public class RemoverView extends javax.swing.JFrame {
         );
 
         lblObs.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        lblObs.setText("Obs: Cheque o ID do conteúdo ");
+        lblObs.setText("Obs: Cheque o ID do conteúdo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,9 +112,9 @@ public class RemoverView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtASerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblObs))
@@ -123,9 +130,9 @@ public class RemoverView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGap(7, 7, 7)
                 .addComponent(btVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(17, 17, 17)
                 .addComponent(lblObs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -134,7 +141,7 @@ public class RemoverView extends javax.swing.JFrame {
                     .addComponent(btChecar))
                 .addGap(18, 18, 18)
                 .addComponent(txtASerie, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(btRemover)
                 .addContainerGap())
         );
@@ -150,6 +157,10 @@ public class RemoverView extends javax.swing.JFrame {
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
+        txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
+    }//GEN-LAST:event_btChecarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,11 +202,11 @@ public class RemoverView extends javax.swing.JFrame {
     private javax.swing.JButton btRemover;
     private javax.swing.JButton btVoltar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblObs;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JScrollPane txtASerie;
+    private javax.swing.JTextArea txtASeries;
     private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }
