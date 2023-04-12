@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.SeriesControl;
+
 /**
  *
  * @author jonas
@@ -32,7 +34,7 @@ public class EditarView extends javax.swing.JFrame {
         lblId = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         TxtAreaSerie = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtASeries = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         btChecar = new javax.swing.JButton();
@@ -55,9 +57,9 @@ public class EditarView extends javax.swing.JFrame {
         lblId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblId.setText("Digite o ID:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        TxtAreaSerie.setViewportView(jTextArea1);
+        txtASeries.setColumns(20);
+        txtASeries.setRows(5);
+        TxtAreaSerie.setViewportView(txtASeries);
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -83,6 +85,11 @@ public class EditarView extends javax.swing.JFrame {
 
         btChecar.setForeground(new java.awt.Color(51, 51, 255));
         btChecar.setText("🔎");
+        btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btChecarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,7 +113,7 @@ public class EditarView extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(btChecar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(btEditar)))
@@ -139,6 +146,10 @@ public class EditarView extends javax.swing.JFrame {
         this.dispose();
         new SeriesView().setVisible(true);
     }//GEN-LAST:event_btVoltarMouseClicked
+
+    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
+        txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
+    }//GEN-LAST:event_btChecarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,10 +192,10 @@ public class EditarView extends javax.swing.JFrame {
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblObs;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextArea txtASeries;
     private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }
