@@ -51,6 +51,11 @@ public class ChecarView extends javax.swing.JFrame {
                 btChecarMouseClicked(evt);
             }
         });
+        btChecar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btChecarActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -115,6 +120,10 @@ public class ChecarView extends javax.swing.JFrame {
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
         txtASeries.setText(SeriesControl.lerSerie());
     }//GEN-LAST:event_btChecarMouseClicked
+
+    private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btChecarActionPerformed
 
     /**
      * @param args the command line arguments

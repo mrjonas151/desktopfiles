@@ -6,6 +6,7 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import model.SeriesModel;
@@ -62,11 +63,12 @@ public class SeriesControl {
         }  
     }
     
-    public static String removerSerie(int id){
+    public static boolean removerSerie(int id){
         String series = lerSerie();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
+        
         
         for (String record : records) {
             Map<String, String> map = new HashMap<>();
@@ -79,47 +81,58 @@ public class SeriesControl {
             }
             listaSeries.add(map);
         }
-        
-        for (Map<String, String> record : listaSeries) {
-            System.out.println(record);
-            String idcomparador = record.get("ID");
+        int cont = 0;
+        Iterator<Map<String, String>> iterador = listaSeries.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
             if (idcomparador.equals(String.valueOf(id))) {
-                listaSeries.remove(record);
-            }   
+                iterador.remove(); //Remove o elemento usando o Iterator
+                cont++;
+            }
         }
-        
+        String resultado;
+        StringBuilder rb = new StringBuilder();
         for (Map<String, String> record : listaSeries) {
-            StringBuilder sb = new StringBuilder();
-                sb.append("ID: ");
-                sb.append(record.get("ID"));
-                sb.append("\n");
-                sb.append("NOME: ");
-                sb.append(record.get("NOME"));
-                sb.append("\n");
-                sb.append("DIRETOR: ");
-                sb.append(record.get("DIRETOR"));
-                sb.append("\n");
-                sb.append("AVALIACAO: ");
-                sb.append(record.get("AVALIACAO"));
-                sb.append("\n");
-                sb.append("TEMPORADAS: ");
-                sb.append(record.get("TEMPORADAS"));
-                sb.append("\n");
-                sb.append("IDIOMA: ");
-                sb.append(record.get("IDIOMA"));
-                sb.append("\n");
-                sb.append("GENERO: ");
-                sb.append(record.get("GENERO"));
-                sb.append("\n");
-                sb.append("PLATAFORMA: ");
-                sb.append(record.get("PLATAFORMA"));
-                sb.append("\n");
-                sb.append("\n");
-                String resultado = sb.toString();
-                return resultado;
+            rb.append("ID: ");
+            rb.append(record.get("ID"));
+            rb.append("\n");
+            rb.append("NOME: ");
+            rb.append(record.get("NOME"));
+            rb.append("\n");
+            rb.append("DIRETOR: ");
+            rb.append(record.get("DIRETOR"));
+            rb.append("\n");
+            rb.append("AVALIACAO: ");
+            rb.append(record.get("AVALIACAO"));
+            rb.append("\n");
+            rb.append("TEMPORADAS: ");
+            rb.append(record.get("TEMPORADAS"));
+            rb.append("\n");
+            rb.append("IDIOMA: ");
+            rb.append(record.get("IDIOMA"));
+            rb.append("\n");
+            rb.append("GENERO: ");
+            rb.append(record.get("GENERO"));
+            rb.append("\n");
+            rb.append("PLATAFORMA: ");
+            rb.append(record.get("PLATAFORMA"));
+            rb.append("\n");
+            rb.append("\n");
         }
+        resultado = rb.toString();
         
-        return "ID nao encontrado!!";
+        SeriesControlArquivoTexto arquivo = new SeriesControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
+        if(cont!=0){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static boolean atualizarSerie(int id){

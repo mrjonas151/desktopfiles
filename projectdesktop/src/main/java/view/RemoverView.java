@@ -5,6 +5,7 @@
 package view;
 
 import controller.SeriesControl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -57,6 +58,11 @@ public class RemoverView extends javax.swing.JFrame {
 
         btRemover.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         btRemover.setText("Remover 🗑️");
+        btRemover.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btRemoverMouseClicked(evt);
+            }
+        });
 
         lblId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblId.setText("Digite o ID:");
@@ -101,7 +107,7 @@ public class RemoverView extends javax.swing.JFrame {
         );
 
         lblObs.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        lblObs.setText("Obs: Cheque o ID do conteúdo");
+        lblObs.setText("Obs: Cheque o ID do conteúdo se necessário.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +176,23 @@ public class RemoverView extends javax.swing.JFrame {
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btChecarActionPerformed
+
+    private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
+        if(SeriesControl.removerSerie(Integer.parseInt(txtId.getText()))){
+            JOptionPane.showMessageDialog(this,
+                        "Removido com sucesso",
+                        "Arquivo gravado",
+                        JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this,
+                    "Erro na remocao",
+                    "Arquivo não gravado",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        
+        
+        
+    }//GEN-LAST:event_btRemoverMouseClicked
 
     /**
      * @param args the command line arguments
