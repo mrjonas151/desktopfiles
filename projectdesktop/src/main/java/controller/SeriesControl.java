@@ -183,6 +183,43 @@ public class SeriesControl {
             novoRegistro.put("PLATAFORMA", novaSerie.getPlataforma());
             listaSeries.add(novoRegistro);
         
+            String resultado;
+            StringBuilder rb = new StringBuilder();
+            for (Map<String, String> record : listaSeries) {
+                rb.append("ID: ");
+                rb.append(record.get("ID"));
+                rb.append("\n");
+                rb.append("NOME: ");
+                rb.append(record.get("NOME"));
+                rb.append("\n");
+                rb.append("DIRETOR: ");
+                rb.append(record.get("DIRETOR"));
+                rb.append("\n");
+                rb.append("AVALIACAO: ");
+                rb.append(record.get("AVALIACAO"));
+                rb.append("\n");
+                rb.append("TEMPORADAS: ");
+                rb.append(record.get("TEMPORADAS"));
+                rb.append("\n");
+                rb.append("IDIOMA: ");
+                rb.append(record.get("IDIOMA"));
+                rb.append("\n");
+                rb.append("GENERO: ");
+                rb.append(record.get("GENERO"));
+                rb.append("\n");
+                rb.append("PLATAFORMA: ");
+                rb.append(record.get("PLATAFORMA"));
+                rb.append("\n");
+                rb.append("\n");
+            }
+            resultado = rb.toString();
+
+            SeriesControlArquivoTexto arquivo = new SeriesControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
             return true;
         }else{
             return false;
