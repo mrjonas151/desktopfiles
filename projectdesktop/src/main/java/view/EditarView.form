@@ -124,7 +124,7 @@
                           <Component id="txtTemporadas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblDiretor" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtDiretor" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -166,6 +166,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Editar &#x270f;&#xfe0f;"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btEditarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblObs">
       <Properties>

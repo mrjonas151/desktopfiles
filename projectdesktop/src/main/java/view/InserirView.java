@@ -68,6 +68,11 @@ public class InserirView extends javax.swing.JFrame {
                 btInserirMouseClicked(evt);
             }
         });
+        btInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInserirActionPerformed(evt);
+            }
+        });
 
         lblID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblID.setText("ID:");
@@ -255,6 +260,10 @@ public class InserirView extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         limpar();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInserirActionPerformed
 
     public void limpar(){
         txtId.setText("");

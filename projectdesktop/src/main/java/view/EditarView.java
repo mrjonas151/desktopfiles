@@ -5,6 +5,7 @@
 package view;
 
 import controller.SeriesControl;
+import javax.swing.JOptionPane;
 import model.SeriesModel;
 
 /**
@@ -65,6 +66,11 @@ public class EditarView extends javax.swing.JFrame {
         });
 
         btEditar.setText("Editar ✏️");
+        btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btEditarMouseClicked(evt);
+            }
+        });
 
         lblObs.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         lblObs.setText("Obs: Cheque o ID do conteúdo ");
@@ -209,7 +215,7 @@ public class EditarView extends javax.swing.JFrame {
                             .addComponent(lblTemporadas)
                             .addComponent(txtTemporadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDiretor)
                             .addComponent(txtDiretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -251,6 +257,26 @@ public class EditarView extends javax.swing.JFrame {
             txtNota.setText(String.valueOf(serie.getAvaliacao()));
         }
     }//GEN-LAST:event_btChecarMouseClicked
+
+    private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
+        if(SeriesControl.atualizarSerie(Integer.parseInt(txtId.getText()), txtNome.getText(),
+        txtIdioma.getText(),
+        txtGenero.getText(),
+        Integer.parseInt(txtTemporadas.getText()),
+        txtDiretor.getText(),
+        txtPlataforma.getText(),
+        Double.parseDouble(txtNota.getText()))){
+            JOptionPane.showMessageDialog(this,
+                "Editado com sucesso",
+                "Arquivo Atualizado",
+                JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this,
+                "Erro na edicao",
+                "Arquivo não editado",
+                JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btEditarMouseClicked
     
     public void limpar(){
         txtId1.setText("");

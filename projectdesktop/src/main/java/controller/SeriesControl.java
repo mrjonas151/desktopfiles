@@ -135,11 +135,12 @@ public class SeriesControl {
         }
     }
     
-    public static boolean atualizarSerie(int id){
+    public static boolean atualizarSerie(int id, String nome, String idioma, String genero, int temporadas, String diretor, String plataforma, double avaliacao){
         String series = lerSerie();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
+        Map<String, String> novoRegistro = new HashMap<>();
         
         for (String record : records) {
             Map<String, String> map = new HashMap<>();
@@ -152,16 +153,40 @@ public class SeriesControl {
             }
             listaSeries.add(map);
         }
+        SeriesModel novaSerie = new SeriesModel();
         
-        for (Map<String, String> record : listaSeries) {
-            System.out.println(record);
-            String idcomparador = record.get("ID");
+        Iterator<Map<String, String>> iterador = listaSeries.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
             if (idcomparador.equals(String.valueOf(id))) {
-                System.out.println("id encontrado!!");
+                iterador.remove();
+                novaSerie.setId(String.valueOf(id));
+                novaSerie.setNome(nome);
+                novaSerie.setAvaliacao(avaliacao);
+                novaSerie.setDiretor(diretor);
+                novaSerie.setGenero(genero);
+                novaSerie.setPlataforma(plataforma);
+                novaSerie.setIdioma(idioma);
+                novaSerie.setTemporadas(temporadas);
             }
         }
-        return true;
         
+        if(novaSerie.getId() != null){
+            novoRegistro.put("ID", Integer.toString(id));
+            novoRegistro.put("NOME", novaSerie.getNome());
+            novoRegistro.put("DIRETOR", novaSerie.getDiretor());
+            novoRegistro.put("AVALIACAO", Double.toString(novaSerie.getAvaliacao()));
+            novoRegistro.put("TEMPORADAS", Integer.toString(novaSerie.getTemporadas()));
+            novoRegistro.put("IDIOMA", novaSerie.getIdioma());
+            novoRegistro.put("GENERO", novaSerie.getGenero());
+            novoRegistro.put("PLATAFORMA", novaSerie.getPlataforma());
+            listaSeries.add(novoRegistro);
+        
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static String lerSeriePorId(int id ){
@@ -277,7 +302,7 @@ public class SeriesControl {
     }
     
     public static void main(String[] args) {
-        atualizarSerie(1);
+        //atualizarSerie(1);
         
     }
 }
