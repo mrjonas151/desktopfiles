@@ -118,7 +118,7 @@ public class ChecarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(Control.lerSerie());
+        txtASeries.setText(Control.lerArquivo());
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed

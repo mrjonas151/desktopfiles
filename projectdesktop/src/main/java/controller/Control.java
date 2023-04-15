@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import model.FilmesModel;
 import model.SeriesModel;
 
 /**
@@ -64,7 +65,7 @@ public class Control {
     }
     
     public static boolean removerSerie(int id){
-        String series = lerSerie();
+        String series = lerArquivo();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
@@ -136,7 +137,7 @@ public class Control {
     }
     
     public static boolean atualizarSerie(int id, String nome, String idioma, String genero, int temporadas, String diretor, String plataforma, double avaliacao){
-        String series = lerSerie();
+        String series = lerArquivo();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
@@ -227,7 +228,7 @@ public class Control {
     }
     
     public static String lerSeriePorId(int id ){
-        String series = lerSerie();
+        String series = lerArquivo();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
@@ -286,7 +287,7 @@ public class Control {
     
     public static SeriesModel lerSeriePorId2(int id ){
         SeriesModel serie = new SeriesModel();
-        String series = lerSerie();
+        String series = lerArquivo();
         String[] records = series.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
@@ -324,12 +325,47 @@ public class Control {
        return null;
     }
     
-    public static String teste(){
-        String x = lerSerie();
-        return x;
+    public static boolean cadastrarFilme(){
+        return true;
     }
     
-    public static String lerSerie(){
+    public static boolean removerFilme(int id){
+        return true;
+    }
+    
+    public static boolean atualizarFilme(){
+        return true;
+    }
+    
+    public static String lerFilmePorId(int id ){
+        return "Id nao encontrado!!";
+    }
+    
+    public static FilmesModel lerFilmePorId2(int id ){
+        return null;
+    }
+    
+    public static boolean cadastrarAnime(){
+        return true;
+    }
+    
+    public static boolean removerAnime(int id){
+        return true;
+    }
+    
+    public static boolean atualizarAnime(){
+        return true;
+    }
+    
+    public static String lerAnimePorId(int id ){
+        return "Id nao encontrado!!";
+    }
+    
+    public static FilmesModel lerAnimePorId2(int id ){
+        return null;
+    }
+    
+    public static String lerArquivo(){
         String leitura = "Não foi possivel ler o arquivo";
         controller.setArquivo("CHECAR");
         if(controller.ler()) {
