@@ -40,7 +40,7 @@ public class SeriesView extends javax.swing.JFrame {
         setTitle("Gerenciador de séries");
 
         btSair.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        btSair.setText("⬅️ Sair");
+        btSair.setText("⬅ Voltar");
         btSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btSairMouseClicked(evt);
@@ -182,7 +182,8 @@ public class SeriesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSairMouseClicked
-        System.exit(0);
+        this.setVisible(false);
+        new PaginaInicialView().setVisible(true);
     }//GEN-LAST:event_btSairMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
