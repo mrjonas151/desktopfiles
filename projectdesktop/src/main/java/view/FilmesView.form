@@ -3,7 +3,6 @@
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Gerenciador de s&#xe9;ries"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -39,16 +38,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btInserir" max="32767" attributes="0"/>
-                      <Component id="btEditar" max="32767" attributes="0"/>
+                      <Component id="btInserir" alignment="0" pref="181" max="32767" attributes="0"/>
+                      <Component id="btEditar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btRemover" pref="179" max="32767" attributes="0"/>
-                      <Component id="btChecar" max="32767" attributes="0"/>
+                      <Component id="btRemover" alignment="0" pref="179" max="32767" attributes="0"/>
+                      <Component id="btChecar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -102,7 +101,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Emoji" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#x2795; Inserir s&#xe9;ries"/>
+            <Property name="text" type="java.lang.String" value="&#x2795; Inserir filmes"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btInserirMouseClicked"/>
@@ -116,7 +115,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Emoji" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#x270f; &#xfe0f;Editar s&#xe9;ries"/>
+            <Property name="text" type="java.lang.String" value="&#x270f; Editar filmes"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btEditarMouseClicked"/>
@@ -131,7 +130,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Emoji" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#x274c; Remover s&#xe9;ries"/>
+            <Property name="text" type="java.lang.String" value="&#x274c; Remover filmes"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btRemoverMouseClicked"/>
@@ -145,7 +144,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Emoji" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="\ud83d\udcd6 Checar s&#xe9;ries" containsInvalidXMLChars="true"/>
+            <Property name="text" type="java.lang.String" value="\ud83d\udcd6 Checar filmes" containsInvalidXMLChars="true"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btChecarMouseClicked"/>
@@ -164,7 +163,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -197,7 +196,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Gerenciamento de S&#xe9;ries \ud83d\udcfa" containsInvalidXMLChars="true"/>
+                <Property name="text" type="java.lang.String" value="Gerenciamento de Filmes \ud83d\udcfd&#xfe0f;" containsInvalidXMLChars="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblWelcome">

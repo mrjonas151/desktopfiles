@@ -8,12 +8,12 @@ package view;
  *
  * @author jonas
  */
-public class SeriesView extends javax.swing.JFrame {
+public class FilmesView extends javax.swing.JFrame {
 
     /**
-     * Creates new form SeriesView
+     * Creates new form FilmesView
      */
-    public SeriesView() {
+    public FilmesView() {
         initComponents();
     }
 
@@ -37,7 +37,6 @@ public class SeriesView extends javax.swing.JFrame {
         lblWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gerenciador de séries");
 
         btSair.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         btSair.setText("⬅ Voltar");
@@ -54,7 +53,7 @@ public class SeriesView extends javax.swing.JFrame {
 
         btInserir.setBackground(new java.awt.Color(153, 255, 153));
         btInserir.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        btInserir.setText("➕ Inserir séries");
+        btInserir.setText("➕ Inserir filmes");
         btInserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btInserirMouseClicked(evt);
@@ -63,7 +62,7 @@ public class SeriesView extends javax.swing.JFrame {
 
         btEditar.setBackground(new java.awt.Color(255, 255, 153));
         btEditar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        btEditar.setText("✏ ️Editar séries");
+        btEditar.setText("✏ Editar filmes");
         btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btEditarMouseClicked(evt);
@@ -77,7 +76,7 @@ public class SeriesView extends javax.swing.JFrame {
 
         btRemover.setBackground(new java.awt.Color(255, 153, 153));
         btRemover.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        btRemover.setText("❌ Remover séries");
+        btRemover.setText("❌ Remover filmes");
         btRemover.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btRemoverMouseClicked(evt);
@@ -86,7 +85,7 @@ public class SeriesView extends javax.swing.JFrame {
 
         btChecar.setBackground(new java.awt.Color(102, 255, 255));
         btChecar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        btChecar.setText("📖 Checar séries");
+        btChecar.setText("📖 Checar filmes");
         btChecar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btChecarMouseClicked(evt);
@@ -97,7 +96,7 @@ public class SeriesView extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 51, 51));
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
-        lblTitulo.setText("Gerenciamento de Séries 📺");
+        lblTitulo.setText("Gerenciamento de Filmes 📽️");
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         lblWelcome.setText("Bem-vindo(a) 💫");
@@ -133,7 +132,7 @@ public class SeriesView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btInserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btInserir, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                     .addComponent(btEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -177,38 +176,38 @@ public class SeriesView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btSairActionPerformed
-
     private void btSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSairMouseClicked
         this.setVisible(false);
         new PaginaInicialView().setVisible(true);
     }//GEN-LAST:event_btSairMouseClicked
 
-    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        this.dispose();
-        new ChecarView().setVisible(true);
-    }//GEN-LAST:event_btChecarMouseClicked
-
-    private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
-        this.dispose();
-        new EditarView().setVisible(true);
-    }//GEN-LAST:event_btEditarMouseClicked
-
-    private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
-        this.dispose();
-        new RemoverView().setVisible(true);
-    }//GEN-LAST:event_btRemoverMouseClicked
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSairActionPerformed
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
         this.dispose();
         new InserirView().setVisible(true);
     }//GEN-LAST:event_btInserirMouseClicked
 
+    private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
+        this.dispose();
+        new EditarView().setVisible(true);
+    }//GEN-LAST:event_btEditarMouseClicked
+
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
+        this.dispose();
+        new RemoverView().setVisible(true);
+    }//GEN-LAST:event_btRemoverMouseClicked
+
+    private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
+        this.dispose();
+        new ChecarView().setVisible(true);
+    }//GEN-LAST:event_btChecarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -227,20 +226,20 @@ public class SeriesView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SeriesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FilmesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SeriesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FilmesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SeriesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FilmesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SeriesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FilmesView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SeriesView().setVisible(true);
+                new FilmesView().setVisible(true);
             }
         });
     }
