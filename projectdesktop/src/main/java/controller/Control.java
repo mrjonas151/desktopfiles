@@ -15,10 +15,10 @@ import model.SeriesModel;
  *
  * @author jonas
  */
-public class SeriesControl {
+public class Control {
     
     
-    static SeriesControlArquivoTexto controller = new SeriesControlArquivoTexto();
+    static ControlArquivoTexto controller = new ControlArquivoTexto();
     
     public static boolean cadastrarSerie(String id, String nome, String idioma, String genero, int temporadas, String diretor, String plataforma, double avaliacao){
         SeriesModel novaSerie = new SeriesModel();
@@ -52,7 +52,7 @@ public class SeriesControl {
         sb.append(novaSerie.getAvaliacao());
         sb.append("\n\n");
         
-        SeriesControlArquivoTexto arquivo = new SeriesControlArquivoTexto();
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
         arquivo.setArquivo("Salvar");
         arquivo.setTexto(sb.toString());
         
@@ -122,7 +122,7 @@ public class SeriesControl {
         }
         resultado = rb.toString();
         
-        SeriesControlArquivoTexto arquivo = new SeriesControlArquivoTexto();
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
             arquivo.setArquivo("Salvar");
             arquivo.setTexto(resultado);
 
@@ -214,7 +214,7 @@ public class SeriesControl {
             }
             resultado = rb.toString();
 
-            SeriesControlArquivoTexto arquivo = new SeriesControlArquivoTexto();
+            ControlArquivoTexto arquivo = new ControlArquivoTexto();
             arquivo.setArquivo("Salvar");
             arquivo.setTexto(resultado);
 

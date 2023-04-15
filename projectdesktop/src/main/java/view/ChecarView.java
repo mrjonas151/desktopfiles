@@ -4,8 +4,8 @@
  */
 package view;
 
-import controller.SeriesControl;
-import controller.SeriesControlArquivoTexto;
+import controller.Control;
+import controller.ControlArquivoTexto;
 
 /**
  *
@@ -118,7 +118,7 @@ public class ChecarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(SeriesControl.lerSerie());
+        txtASeries.setText(Control.lerSerie());
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed

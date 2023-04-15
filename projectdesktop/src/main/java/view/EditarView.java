@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.SeriesControl;
+import controller.Control;
 import javax.swing.JOptionPane;
 import model.SeriesModel;
 
@@ -241,7 +241,7 @@ public class EditarView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        SeriesModel serie = SeriesControl.lerSeriePorId2(Integer.parseInt(txtId.getText()));
+        SeriesModel serie = Control.lerSeriePorId2(Integer.parseInt(txtId.getText()));
         
         
         if(serie != null){
@@ -267,7 +267,7 @@ public class EditarView extends javax.swing.JFrame {
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
         
-        if(SeriesControl.atualizarSerie(Integer.parseInt(txtId.getText()), txtNome.getText(),
+        if(Control.atualizarSerie(Integer.parseInt(txtId.getText()), txtNome.getText(),
         txtIdioma.getText(),
         txtGenero.getText(),
         Integer.parseInt(txtTemporadas.getText()),

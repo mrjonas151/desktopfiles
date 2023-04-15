@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.SeriesControl;
+import controller.Control;
 import javax.swing.JOptionPane;
 
 /**
@@ -231,7 +231,7 @@ public class InserirView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
-        if(SeriesControl.cadastrarSerie(txtId.getText(),
+        if(Control.cadastrarSerie(txtId.getText(),
         txtNome.getText(),
         txtIdioma.getText(),
         txtGenero.getText(),

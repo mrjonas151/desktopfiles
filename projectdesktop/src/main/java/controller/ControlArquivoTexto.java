@@ -15,7 +15,7 @@ import java.io.IOException;
  *
  * @author jonas
  */
-public class SeriesControlArquivoTexto extends SeriesControlArquivo {
+public class ControlArquivoTexto extends ControlArquivo {
 
     private String texto = null;
     private BufferedReader leitura = null;

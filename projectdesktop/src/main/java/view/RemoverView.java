@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.SeriesControl;
+import controller.Control;
 import javax.swing.JOptionPane;
 
 /**
@@ -170,7 +170,7 @@ public class RemoverView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(SeriesControl.lerSeriePorId(Integer.parseInt(txtId.getText())));
+        txtASeries.setText(Control.lerSeriePorId(Integer.parseInt(txtId.getText())));
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed
@@ -178,7 +178,7 @@ public class RemoverView extends javax.swing.JFrame {
     }//GEN-LAST:event_btChecarActionPerformed
 
     private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
-        if(SeriesControl.removerSerie(Integer.parseInt(txtId.getText()))){
+        if(Control.removerSerie(Integer.parseInt(txtId.getText()))){
             JOptionPane.showMessageDialog(this,
                         "Removido com sucesso",
                         "Arquivo gravado",
