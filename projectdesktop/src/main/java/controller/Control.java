@@ -325,27 +325,251 @@ public class Control {
        return null;
     }
     
-    public static boolean cadastrarFilme(){
-        return true;
+    public static boolean cadastrarFilme(String id, String nome, int anoLancamento, int duracao){
+        FilmesModel novoFilme = new FilmesModel();
+        
+        novoFilme.setId(id);
+        novoFilme.setNome(nome);
+        novoFilme.setDuracao(duracao);
+        novoFilme.setAnoLancamento(anoLancamento);
+        
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: ");
+        sb.append(novoFilme.getId());
+        sb.append("\nNOME: ");
+        sb.append(novoFilme.getNome());
+        sb.append("\nDURACAO: ");
+        sb.append(novoFilme.getDuracao());
+        sb.append("\nANO LANCAMENTO: ");
+        sb.append(novoFilme.getAnoLancamento());
+        sb.append("\n\n");
+        
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
+        arquivo.setArquivo("Salvar");
+        arquivo.setTexto(sb.toString());
+        
+        if(arquivo.escrever(true)){
+            return true;
+        }else{
+            return false;
+        }  
     }
     
     public static boolean removerFilme(int id){
-        return true;
+        String filmes = lerArquivo();
+        String[] records = filmes.split("\n\n");
+        
+        List<Map<String, String>> listaFilmes = new ArrayList<>();
+        
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaFilmes.add(map);
+        }
+        int cont = 0;
+        Iterator<Map<String, String>> iterador = listaFilmes.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                iterador.remove(); 
+                cont++;
+            }
+        }
+        String resultado;
+        StringBuilder rb = new StringBuilder();
+        for (Map<String, String> record : listaFilmes) {
+            rb.append("ID: ");
+            rb.append(record.get("ID"));
+            rb.append("\n");
+            rb.append("NOME: ");
+            rb.append(record.get("NOME"));
+            rb.append("\n");
+            rb.append("ANO LANCAMENTO: ");
+            rb.append(record.get("ANO LANCAMENTO"));
+            rb.append("\n");
+            rb.append("DURACAO: ");
+            rb.append(record.get("DURACAO"));
+            rb.append("\n");
+            rb.append("\n");
+        }
+        resultado = rb.toString();
+        
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
+        if(cont!=0){
+            return true;
+        }else{
+            return false;
+        }
     }
     
-    public static boolean atualizarFilme(){
-        return true;
+    public static boolean atualizarFilme(String id, String nome, int anoLancamento, int duracao){
+        String filmes = lerArquivo();
+        String[] records = filmes.split("\n\n");
+        
+        List<Map<String, String>> listaFilmes = new ArrayList<>();
+        Map<String, String> novoRegistro = new HashMap<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaFilmes.add(map);
+        }
+        FilmesModel novoFilme = new FilmesModel();
+        
+        Iterator<Map<String, String>> iterador = listaFilmes.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                iterador.remove();
+                novoFilme.setId(String.valueOf(id));
+                novoFilme.setNome(nome);
+                novoFilme.setDuracao(duracao);
+                novoFilme.setAnoLancamento(anoLancamento);
+            }
+        }
+        
+        if(novoFilme.getId() != null){
+            novoRegistro.put("ID", (id));
+            novoRegistro.put("NOME", novoFilme.getNome());
+            novoRegistro.put("ANO LANCAMENTO", Integer.toString(novoFilme.getAnoLancamento()));
+            novoRegistro.put("DURACAO", Integer.toString(novoFilme.getDuracao()));
+            listaFilmes.add(novoRegistro);
+        
+            String resultado;
+            StringBuilder rb = new StringBuilder();
+            for (Map<String, String> record : listaFilmes) {
+                rb.append("ID: ");
+                rb.append(record.get("ID"));
+                rb.append("\n");
+                rb.append("NOME: ");
+                rb.append(record.get("NOME"));
+                rb.append("\n");
+                rb.append("ANO LANCAMENTO: ");
+                rb.append(record.get("ANO LANCAMENTO"));
+                rb.append("\n");
+                rb.append("DURACAO: ");
+                rb.append(record.get("DURACAO"));
+                rb.append("\n");
+                rb.append("\n");
+            }
+            resultado = rb.toString();
+
+            ControlArquivoTexto arquivo = new ControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static String lerFilmePorId(int id ){
-        return "Id nao encontrado!!";
+        String filmes = lerArquivo();
+        String[] records = filmes.split("\n\n");
+        
+        List<Map<String, String>> listaFilmes = new ArrayList<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaFilmes.add(map);
+        }
+        for (Map<String, String> record : listaFilmes) {
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                System.out.println("id encontrado!!");
+                StringBuilder sb = new StringBuilder();
+                sb.append("ID: ");
+                sb.append(record.get("ID"));
+                sb.append("\n");
+                sb.append("NOME: ");
+                sb.append(record.get("NOME"));
+                sb.append("\n");
+                sb.append("ANO LANCAMENTO: ");
+                sb.append(record.get("ANO LANCAMENTO"));
+                sb.append("\n");
+                sb.append("DURACAO: ");
+                sb.append(record.get("DURACAO"));
+                sb.append("\n");
+                sb.append("\n");
+                String resultado = sb.toString();
+                System.out.println(resultado);
+                return resultado;
+            }
+        }
+        
+        
+       return "ID nao encontrado!!";
     }
     
     public static FilmesModel lerFilmePorId2(int id ){
-        return null;
+        FilmesModel filme = new FilmesModel();
+        String filmes = lerArquivo();
+        String[] records = filmes.split("\n\n");
+        
+        List<Map<String, String>> listaSeries = new ArrayList<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaSeries.add(map);
+        }
+        for (Map<String, String> record : listaSeries) {
+            
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                filme.setId(record.get("ID"));
+                filme.setNome(record.get("NOME"));
+                filme.setAnoLancamento(Integer.parseInt(record.get("ANO LANCAMENTO")));
+                filme.setDuracao(Integer.parseInt(record.get("DURACAO")));
+                        
+                return filme;
+            }
+        }
+        
+        
+       return null;
     }
     
-    public static boolean cadastrarAnime(){
+    public static boolean cadastrarAnime(String id, String nome, int temporadas, String dublagemOriginal){
         return true;
     }
     
@@ -353,7 +577,7 @@ public class Control {
         return true;
     }
     
-    public static boolean atualizarAnime(){
+    public static boolean atualizarAnime(String id, String nome, int temporadas, String dublagemOriginal){
         return true;
     }
     
@@ -374,8 +598,8 @@ public class Control {
         return leitura;
     }
     
-    public static void main(String[] args) {
-        //atualizarSerie(1);
-        
-    }
+//    public static void main(String[] args) {
+//        //atualizarSerie(1);
+//        
+//    }
 }
