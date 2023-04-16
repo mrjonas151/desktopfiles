@@ -213,7 +213,8 @@ public class EditarFilmesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltar1MouseClicked
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
-
+       
+        
         if(Control.atualizarFilme((txtId.getText()), txtNome.getText(),
             Integer.parseInt(txtAnoLancamento.getText()),
             Integer.parseInt(txtDuracao.getText()))){

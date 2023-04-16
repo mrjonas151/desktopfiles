@@ -185,7 +185,7 @@ public class RemoverFilmesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btRemoverMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(Control.lerSeriePorId(Integer.parseInt(txtId.getText())));
+        txtASeries.setText(Control.lerFilmePorId(Integer.parseInt(txtId.getText())));
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed

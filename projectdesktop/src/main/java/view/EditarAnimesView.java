@@ -209,7 +209,8 @@ public class EditarAnimesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltar1MouseClicked
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
-
+        
+        
         if(Control.atualizarAnime((txtId.getText()), txtNome.getText(),
             Integer.parseInt(txtTemporadas.getText()),
             txtAudioOriginal.getText())){
