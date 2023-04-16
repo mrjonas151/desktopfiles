@@ -85,10 +85,20 @@ public class PaginaInicialView extends javax.swing.JFrame {
         btFilmes.setBackground(new java.awt.Color(255, 153, 153));
         btFilmes.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         btFilmes.setText(" ⚙ Filmes");
+        btFilmes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btFilmesMouseClicked(evt);
+            }
+        });
 
         btAnimes.setBackground(new java.awt.Color(255, 153, 153));
         btAnimes.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         btAnimes.setText("   ⚙ Animes");
+        btAnimes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAnimesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +137,16 @@ public class PaginaInicialView extends javax.swing.JFrame {
         this.setVisible(false);
         new SeriesView().setVisible(true);
     }//GEN-LAST:event_btSeriesMouseClicked
+
+    private void btFilmesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFilmesMouseClicked
+        this.setVisible(false);
+        new FilmesView().setVisible(true);
+    }//GEN-LAST:event_btFilmesMouseClicked
+
+    private void btAnimesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnimesMouseClicked
+        this.setVisible(false);
+        new AnimesView().setVisible(true);
+    }//GEN-LAST:event_btAnimesMouseClicked
 
     /**
      * @param args the command line arguments
