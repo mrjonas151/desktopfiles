@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Control;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jonas
@@ -167,7 +170,7 @@ public class RemoverFilmesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltar3ActionPerformed
 
     private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
-        if(Control.removerSerie(Integer.parseInt(txtId.getText()))){
+        if(Control.removerFilme(Integer.parseInt(txtId.getText()))){
             JOptionPane.showMessageDialog(this,
                 "Removido com sucesso",
                 "Arquivo gravado",

@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.Control;
+
 /**
  *
  * @author jonas

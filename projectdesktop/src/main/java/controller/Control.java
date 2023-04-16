@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import model.AnimesModel;
 import model.FilmesModel;
 import model.SeriesModel;
 
@@ -538,7 +539,7 @@ public class Control {
         String filmes = lerArquivo();
         String[] records = filmes.split("\n\n");
         
-        List<Map<String, String>> listaSeries = new ArrayList<>();
+        List<Map<String, String>> listaFilmes = new ArrayList<>();
         
         for (String record : records) {
             Map<String, String> map = new HashMap<>();
@@ -549,9 +550,9 @@ public class Control {
                 String value = parts[1];
                 map.put(key, value);
             }
-            listaSeries.add(map);
+            listaFilmes.add(map);
         }
-        for (Map<String, String> record : listaSeries) {
+        for (Map<String, String> record : listaFilmes) {
             
             System.out.println(record);
             String idcomparador = record.get("ID");
@@ -570,23 +571,247 @@ public class Control {
     }
     
     public static boolean cadastrarAnime(String id, String nome, int temporadas, String dublagemOriginal){
-        return true;
+        AnimesModel novoAnime = new AnimesModel();
+        
+        novoAnime.setId(id);
+        novoAnime.setNome(nome);
+        novoAnime.setTemporadas(temporadas);
+        novoAnime.setDublagemOriginal(dublagemOriginal);
+        
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: ");
+        sb.append(novoAnime.getId());
+        sb.append("\nNOME: ");
+        sb.append(novoAnime.getNome());
+        sb.append("\nTEMPORADAS: ");
+        sb.append(novoAnime.getTemporadas());
+        sb.append("\nDUBLAGEM ORIGINAL: ");
+        sb.append(novoAnime.getDublagemOriginal());
+        sb.append("\n\n");
+        
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
+        arquivo.setArquivo("Salvar");
+        arquivo.setTexto(sb.toString());
+        
+        if(arquivo.escrever(true)){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static boolean removerAnime(int id){
-        return true;
+        String animes = lerArquivo();
+        String[] records = animes.split("\n\n");
+        
+        List<Map<String, String>> listaAnimes = new ArrayList<>();
+        
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaAnimes.add(map);
+        }
+        int cont = 0;
+        Iterator<Map<String, String>> iterador = listaAnimes.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                iterador.remove(); 
+                cont++;
+            }
+        }
+        String resultado;
+        StringBuilder rb = new StringBuilder();
+        for (Map<String, String> record : listaAnimes) {
+            rb.append("ID: ");
+            rb.append(record.get("ID"));
+            rb.append("\n");
+            rb.append("NOME: ");
+            rb.append(record.get("NOME"));
+            rb.append("\n");
+            rb.append("TEMPORADAS: ");
+            rb.append(record.get("TEMPORADAS"));
+            rb.append("\n");
+            rb.append("DUBLAGEM ORIGINAL: ");
+            rb.append(record.get("DUBLAGEM ORIGINAL"));
+            rb.append("\n");
+            rb.append("\n");
+        }
+        resultado = rb.toString();
+        
+        ControlArquivoTexto arquivo = new ControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
+        if(cont!=0){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static boolean atualizarAnime(String id, String nome, int temporadas, String dublagemOriginal){
-        return true;
+        String animes = lerArquivo();
+        String[] records = animes.split("\n\n");
+        
+        List<Map<String, String>> listaAnimes = new ArrayList<>();
+        Map<String, String> novoRegistro = new HashMap<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaAnimes.add(map);
+        }
+        AnimesModel novoAnime = new AnimesModel();
+        
+        Iterator<Map<String, String>> iterador = listaAnimes.iterator();
+        while (iterador.hasNext()) {
+            Map<String, String> registro = iterador.next();
+            String idcomparador = registro.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                iterador.remove();
+                novoAnime.setId(String.valueOf(id));
+                novoAnime.setNome(nome);
+                novoAnime.setTemporadas(temporadas);
+                novoAnime.setDublagemOriginal(dublagemOriginal);
+            }
+        }
+        
+        if(novoAnime.getId() != null){
+            novoRegistro.put("ID", (id));
+            novoRegistro.put("NOME", novoAnime.getNome());
+            novoRegistro.put("TEMPORADAS", Integer.toString(novoAnime.getTemporadas()));
+            novoRegistro.put("DUBLAGEM ORIGINAL", (novoAnime.getDublagemOriginal()));
+            listaAnimes.add(novoRegistro);
+        
+            String resultado;
+            StringBuilder rb = new StringBuilder();
+            for (Map<String, String> record : listaAnimes) {
+                rb.append("ID: ");
+                rb.append(record.get("ID"));
+                rb.append("\n");
+                rb.append("NOME: ");
+                rb.append(record.get("NOME"));
+                rb.append("\n");
+                rb.append("TEMPORADAS: ");
+                rb.append(record.get("TEMPORADAS"));
+                rb.append("\n");
+                rb.append("DUBLAGEM ORIGINAL: ");
+                rb.append(record.get("DUBLAGEM ORIGINAL"));
+                rb.append("\n");
+                rb.append("\n");
+            }
+            resultado = rb.toString();
+
+            ControlArquivoTexto arquivo = new ControlArquivoTexto();
+            arquivo.setArquivo("Salvar");
+            arquivo.setTexto(resultado);
+
+            arquivo.escrever(false);
+            
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public static String lerAnimePorId(int id ){
-        return "Id nao encontrado!!";
+        String animes = lerArquivo();
+        String[] records = animes.split("\n\n");
+        
+        List<Map<String, String>> listaAnimes = new ArrayList<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaAnimes.add(map);
+        }
+        for (Map<String, String> record : listaAnimes) {
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                System.out.println("id encontrado!!");
+                StringBuilder sb = new StringBuilder();
+                sb.append("ID: ");
+                sb.append(record.get("ID"));
+                sb.append("\n");
+                sb.append("NOME: ");
+                sb.append(record.get("NOME"));
+                sb.append("\n");
+                sb.append("TEMPORADAS: ");
+                sb.append(record.get("TEMPORADAS"));
+                sb.append("\n");
+                sb.append("DUBLAGEM ORIGINAL: ");
+                sb.append(record.get("DUBLAGEM ORIGINAL"));
+                sb.append("\n");
+                sb.append("\n");
+                String resultado = sb.toString();
+                System.out.println(resultado);
+                return resultado;
+            }
+        }
+        
+        
+       return "ID nao encontrado!!";
     }
     
-    public static FilmesModel lerAnimePorId2(int id ){
-        return null;
+    public static AnimesModel lerAnimePorId2(int id ){
+        AnimesModel anime = new AnimesModel();
+        String animes = lerArquivo();
+        String[] records = animes.split("\n\n");
+        
+        List<Map<String, String>> listaAnimes = new ArrayList<>();
+        
+        for (String record : records) {
+            Map<String, String> map = new HashMap<>();
+            String[] linhas = record.split("\n");
+            for (String linha : linhas) {
+                String[] parts = linha.split(": ");
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            listaAnimes.add(map);
+        }
+        for (Map<String, String> record : listaAnimes) {
+            
+            System.out.println(record);
+            String idcomparador = record.get("ID");
+            if (idcomparador.equals(String.valueOf(id))) {
+                anime.setId(record.get("ID"));
+                anime.setNome(record.get("NOME"));
+                anime.setTemporadas(Integer.parseInt(record.get("TEMPORADAS")));
+                anime.setDublagemOriginal((record.get("DUBLAGEM ORIGINAL")));
+                        
+                return anime;
+            }
+        }
+        
+        
+       return null;
     }
     
     public static String lerArquivo(){

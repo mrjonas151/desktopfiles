@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Control;
+import model.FilmesModel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author jonas
@@ -178,20 +181,16 @@ public class EditarFilmesView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        SeriesModel serie = Control.lerSeriePorId2(Integer.parseInt(txtId.getText()));
+        FilmesModel filme = Control.lerFilmePorId2(Integer.parseInt(txtId.getText()));
 
-        if(serie != null){
+        if(filme != null){
             JOptionPane.showMessageDialog(this,
                 "Id encontrado",
                 "Identificador",
                 JOptionPane.INFORMATION_MESSAGE);
-            txtNome.setText(serie.getNome());
-            txtIdioma.setText(serie.getIdioma());
-            txtAnoLancamento.setText(serie.getGenero());
-            txtTemporadas.setText(String.valueOf(serie.getTemporadas()));
-            txtDiretor.setText(serie.getDiretor());
-            txtPlataforma.setText(serie.getPlataforma());
-            txtDuracao.setText(String.valueOf(serie.getAvaliacao()));
+            txtNome.setText(filme.getNome());
+            txtAnoLancamento.setText(String.valueOf(filme.getAnoLancamento()));
+            txtDuracao.setText(String.valueOf(filme.getDuracao()));
         }else{
             JOptionPane.showMessageDialog(this,
                 "Id nao encontrado..",
@@ -201,6 +200,13 @@ public class EditarFilmesView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btChecarMouseClicked
 
+    public void limpar(){
+        txtId.setText("");
+        txtNome.setText("");
+        txtDuracao.setText("");
+        txtAnoLancamento.setText("");
+    }
+    
     private void btVoltar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltar1MouseClicked
         this.dispose();
         new SeriesView().setVisible(true);
@@ -208,13 +214,9 @@ public class EditarFilmesView extends javax.swing.JFrame {
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
 
-        if(Control.atualizarSerie(Integer.parseInt(txtId.getText()), txtNome.getText(),
-            txtIdioma.getText(),
-            txtAnoLancamento.getText(),
-            Integer.parseInt(txtTemporadas.getText()),
-            txtDiretor.getText(),
-            txtPlataforma.getText(),
-            Double.parseDouble(txtDuracao.getText()))){
+        if(Control.atualizarFilme((txtId.getText()), txtNome.getText(),
+            Integer.parseInt(txtAnoLancamento.getText()),
+            Integer.parseInt(txtDuracao.getText()))){
         JOptionPane.showMessageDialog(this,
             "Editado com sucesso",
             "Arquivo Atualizado",

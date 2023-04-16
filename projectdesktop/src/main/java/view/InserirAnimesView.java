@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Control;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jonas
@@ -30,10 +33,10 @@ public class InserirAnimesView extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         btLimpar = new javax.swing.JButton();
-        txtDuracao = new javax.swing.JTextField();
+        txtAudioOriginal = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
-        txtAnoLancamento = new javax.swing.JTextField();
+        txtTemporadas = new javax.swing.JTextField();
         btInserir = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
@@ -133,14 +136,14 @@ public class InserirAnimesView extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lblDuracao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDuracao))
+                                .addComponent(txtAudioOriginal))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNome)
                                     .addComponent(lblAnoLancamento))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtAnoLancamento, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTemporadas, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -162,11 +165,11 @@ public class InserirAnimesView extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAnoLancamento)
-                    .addComponent(txtAnoLancamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTemporadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDuracao)
-                    .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAudioOriginal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btLimpar)
@@ -191,14 +194,10 @@ public class InserirAnimesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
-        if(Control.cadastrarSerie(txtId.getText(),
+        if(Control.cadastrarAnime(txtId.getText(),
             txtNome.getText(),
-            txtAnoLancamento.getText(),
-            txtDuracao.getText(),
             Integer.parseInt(txtTemporadas.getText()),
-            txtDiretor.getText(),
-            txtPlataforma.getText(),
-            Double.parseDouble(txtNota.getText()))){
+            txtAudioOriginal.getText())){
 
         JOptionPane.showMessageDialog(this,
             "Arquivo gravado com sucesso",
@@ -213,6 +212,14 @@ public class InserirAnimesView extends javax.swing.JFrame {
         limpar();
     }//GEN-LAST:event_btInserirMouseClicked
 
+    public void limpar(){
+        txtId.setText("");
+        txtNome.setText("");
+        txtTemporadas.setText("");
+        txtAudioOriginal.setText("");
+        txtId.requestFocus();
+    }
+    
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btInserirActionPerformed
@@ -262,9 +269,9 @@ public class InserirAnimesView extends javax.swing.JFrame {
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtAnoLancamento;
-    private javax.swing.JTextField txtDuracao;
+    private javax.swing.JTextField txtAudioOriginal;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtTemporadas;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,10 @@
  */
 package view;
 
+import controller.Control;
+import model.AnimesModel;
+import javax.swing.JOptionPane;
+        
 /**
  *
  * @author jonas
@@ -172,20 +176,16 @@ public class EditarAnimesView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        SeriesModel serie = Control.lerSeriePorId2(Integer.parseInt(txtId.getText()));
+        AnimesModel anime = Control.lerAnimePorId2(Integer.parseInt(txtId.getText()));
 
-        if(serie != null){
+        if(anime != null){
             JOptionPane.showMessageDialog(this,
                 "Id encontrado",
                 "Identificador",
                 JOptionPane.INFORMATION_MESSAGE);
-            txtNome.setText(serie.getNome());
-            txtIdioma.setText(serie.getIdioma());
-            txtTemporadas.setText(serie.getGenero());
-            txtTemporadas.setText(String.valueOf(serie.getTemporadas()));
-            txtDiretor.setText(serie.getDiretor());
-            txtPlataforma.setText(serie.getPlataforma());
-            txtAudioOriginal.setText(String.valueOf(serie.getAvaliacao()));
+            txtNome.setText(anime.getNome());
+            txtAudioOriginal.setText(anime.getDublagemOriginal());
+            txtTemporadas.setText(String.valueOf(anime.getTemporadas()));
         }else{
             JOptionPane.showMessageDialog(this,
                 "Id nao encontrado..",
@@ -195,6 +195,14 @@ public class EditarAnimesView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btChecarMouseClicked
 
+    public void limpar(){
+        txtNome.setText("");
+        txtId.setText("");
+        txtTemporadas.setText("");
+        txtAudioOriginal.setText("");
+    }
+    
+    
     private void btVoltar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltar1MouseClicked
         this.dispose();
         new SeriesView().setVisible(true);
@@ -202,13 +210,9 @@ public class EditarAnimesView extends javax.swing.JFrame {
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
 
-        if(Control.atualizarSerie(Integer.parseInt(txtId.getText()), txtNome.getText(),
-            txtIdioma.getText(),
-            txtTemporadas.getText(),
+        if(Control.atualizarAnime((txtId.getText()), txtNome.getText(),
             Integer.parseInt(txtTemporadas.getText()),
-            txtDiretor.getText(),
-            txtPlataforma.getText(),
-            Double.parseDouble(txtAudioOriginal.getText()))){
+            txtAudioOriginal.getText())){
         JOptionPane.showMessageDialog(this,
             "Editado com sucesso",
             "Arquivo Atualizado",
@@ -221,6 +225,7 @@ public class EditarAnimesView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btEditarMouseClicked
 
+    
     /**
      * @param args the command line arguments
      */

@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Control;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jonas
@@ -184,14 +187,10 @@ public class InserirFilmesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
-        if(Control.cadastrarSerie(txtId.getText(),
+        if(Control.cadastrarFilme(txtId.getText(),
             txtNome.getText(),
-            txtAnoLancamento.getText(),
-            txtDuracao.getText(),
-            Integer.parseInt(txtTemporadas.getText()),
-            txtDiretor.getText(),
-            txtPlataforma.getText(),
-            Double.parseDouble(txtNota.getText()))){
+            Integer.parseInt(txtAnoLancamento.getText()),
+            Integer.parseInt(txtDuracao.getText()))){
 
         JOptionPane.showMessageDialog(this,
             "Arquivo gravado com sucesso",
@@ -218,6 +217,14 @@ public class InserirFilmesView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btLimparActionPerformed
 
+    public void limpar(){
+        txtId.setText("");
+        txtNome.setText("");
+        txtAnoLancamento.setText("");
+        txtDuracao.setText("");
+        txtId.requestFocus();
+    }
+    
     /**
      * @param args the command line arguments
      */

@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Control;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jonas
@@ -167,7 +170,7 @@ public class RemoverAnimesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltar3ActionPerformed
 
     private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
-        if(Control.removerSerie(Integer.parseInt(txtId.getText()))){
+        if(Control.removerAnime(Integer.parseInt(txtId.getText()))){
             JOptionPane.showMessageDialog(this,
                 "Removido com sucesso",
                 "Arquivo gravado",
@@ -181,7 +184,7 @@ public class RemoverAnimesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btRemoverMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
-        txtASeries.setText(Control.lerSeriePorId(Integer.parseInt(txtId.getText())));
+        txtASeries.setText(Control.lerFilmePorId(Integer.parseInt(txtId.getText())));
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btChecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarActionPerformed
