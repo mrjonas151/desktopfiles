@@ -187,12 +187,12 @@ public class FilmesView extends javax.swing.JFrame {
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
         this.dispose();
-        new InserirView().setVisible(true);
+        new InserirFilmesView().setVisible(true);
     }//GEN-LAST:event_btInserirMouseClicked
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
         this.dispose();
-        new EditarView().setVisible(true);
+        new EditarFilmesView().setVisible(true);
     }//GEN-LAST:event_btEditarMouseClicked
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
@@ -201,12 +201,12 @@ public class FilmesView extends javax.swing.JFrame {
 
     private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
         this.dispose();
-        new RemoverView().setVisible(true);
+        new RemoverFilmesView().setVisible(true);
     }//GEN-LAST:event_btRemoverMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
         this.dispose();
-        new ChecarView().setVisible(true);
+        new ChecarFilmesView().setVisible(true);
     }//GEN-LAST:event_btChecarMouseClicked
 
     /**

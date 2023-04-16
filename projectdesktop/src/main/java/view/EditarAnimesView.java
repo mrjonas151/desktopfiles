@@ -205,7 +205,7 @@ public class EditarAnimesView extends javax.swing.JFrame {
     
     private void btVoltar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltar1MouseClicked
         this.dispose();
-        new SeriesView().setVisible(true);
+        new AnimesView().setVisible(true);
     }//GEN-LAST:event_btVoltar1MouseClicked
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked

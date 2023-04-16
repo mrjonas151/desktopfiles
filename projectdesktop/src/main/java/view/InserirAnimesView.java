@@ -190,7 +190,7 @@ public class InserirAnimesView extends javax.swing.JFrame {
 
     private void btVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltarMouseClicked
         this.dispose();
-        new SeriesView().setVisible(true);
+        new AnimesView().setVisible(true);
     }//GEN-LAST:event_btVoltarMouseClicked
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked

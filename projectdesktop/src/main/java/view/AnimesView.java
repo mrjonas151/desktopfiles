@@ -192,12 +192,12 @@ public class AnimesView extends javax.swing.JFrame {
 
     private void btInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirMouseClicked
         this.dispose();
-        new InserirView().setVisible(true);
+        new InserirAnimesView().setVisible(true);
     }//GEN-LAST:event_btInserirMouseClicked
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
         this.dispose();
-        new EditarView().setVisible(true);
+        new EditarAnimesView().setVisible(true);
     }//GEN-LAST:event_btEditarMouseClicked
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
@@ -206,12 +206,12 @@ public class AnimesView extends javax.swing.JFrame {
 
     private void btRemoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRemoverMouseClicked
         this.dispose();
-        new RemoverView().setVisible(true);
+        new RemoverAnimesView().setVisible(true);
     }//GEN-LAST:event_btRemoverMouseClicked
 
     private void btChecarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btChecarMouseClicked
         this.dispose();
-        new ChecarView().setVisible(true);
+        new ChecarAnimesView().setVisible(true);
     }//GEN-LAST:event_btChecarMouseClicked
 
     private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed

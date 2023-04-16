@@ -162,7 +162,7 @@ public class RemoverAnimesView extends javax.swing.JFrame {
 
     private void btVoltar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltar3MouseClicked
         this.dispose();
-        new SeriesView().setVisible(true);
+        new AnimesView().setVisible(true);
     }//GEN-LAST:event_btVoltar3MouseClicked
 
     private void btVoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar3ActionPerformed
