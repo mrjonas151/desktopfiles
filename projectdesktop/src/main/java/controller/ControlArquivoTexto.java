@@ -77,4 +77,9 @@ public class ControlArquivoTexto extends ControlArquivo {
             return false;
         }
     }
+
+    @Override
+    public String getPath() {
+        return arquivo.getAbsolutePath();
+    }
 }

@@ -15,14 +15,14 @@ public abstract class ControlArquivo {
     public File arquivo = null;
     public abstract boolean ler(); //metodo abstrato que obriga sobrescrever na herança
     public abstract boolean escrever(boolean append); //metodo abstrato que obriga sobrescrever na herança
-    
+    public abstract String getPath();
     /**
      * @return the arquivo
      */
     public File getArquivo() {
         return arquivo;
     }
-
+    
     /**
      * @param TextoBotao o texto para o botão de escolha do usuário
      */

@@ -4,6 +4,10 @@
  */
 package controller;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -66,8 +70,18 @@ public class Control {
     }
     
     public static boolean removerSerie(int id){
-        String series = lerArquivo();
-        String[] records = series.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String series = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
         
@@ -124,11 +138,14 @@ public class Control {
         }
         resultado = rb.toString();
         
-        ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
         if(cont!=0){
             return true;
@@ -138,8 +155,18 @@ public class Control {
     }
     
     public static boolean atualizarSerie(int id, String nome, String idioma, String genero, int temporadas, String diretor, String plataforma, double avaliacao){
-        String series = lerArquivo();
-        String[] records = series.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String series = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
         Map<String, String> novoRegistro = new HashMap<>();
@@ -216,11 +243,14 @@ public class Control {
             }
             resultado = rb.toString();
 
-            ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
             return true;
         }else{
@@ -229,8 +259,18 @@ public class Control {
     }
     
     public static String lerSeriePorId(int id ){
-        String series = lerArquivo();
-        String[] records = series.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String series = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
         
@@ -288,8 +328,19 @@ public class Control {
     
     public static SeriesModel lerSeriePorId2(int id ){
         SeriesModel serie = new SeriesModel();
-        String series = lerArquivo();
-        String[] records = series.split("\n\n");
+        
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String series = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaSeries = new ArrayList<>();
         
@@ -358,8 +409,18 @@ public class Control {
     }
     
     public static boolean removerFilme(int id){
-        String filmes = lerArquivo();
-        String[] records = filmes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String filmes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaFilmes = new ArrayList<>();
         
@@ -404,11 +465,14 @@ public class Control {
         }
         resultado = rb.toString();
         
-        ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
         if(cont!=0){
             return true;
@@ -418,8 +482,18 @@ public class Control {
     }
     
     public static boolean atualizarFilme(String id, String nome, int anoLancamento, int duracao){
-        String filmes = lerArquivo();
-        String[] records = filmes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String filmes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaFilmes = new ArrayList<>();
         Map<String, String> novoRegistro = new HashMap<>();
@@ -476,11 +550,14 @@ public class Control {
             }
             resultado = rb.toString();
 
-            ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
             return true;
         }else{
@@ -489,8 +566,18 @@ public class Control {
     }
     
     public static String lerFilmePorId(int id ){
-        String filmes = lerArquivo();
-        String[] records = filmes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String filmes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaFilmes = new ArrayList<>();
         
@@ -536,8 +623,19 @@ public class Control {
     
     public static FilmesModel lerFilmePorId2(int id ){
         FilmesModel filme = new FilmesModel();
-        String filmes = lerArquivo();
-        String[] records = filmes.split("\n\n");
+        
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String filmes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaFilmes = new ArrayList<>();
         
@@ -602,8 +700,18 @@ public class Control {
     }
     
     public static boolean removerAnime(int id){
-        String animes = lerArquivo();
-        String[] records = animes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String animes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaAnimes = new ArrayList<>();
         
@@ -648,11 +756,14 @@ public class Control {
         }
         resultado = rb.toString();
         
-        ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
         if(cont!=0){
             return true;
@@ -662,8 +773,18 @@ public class Control {
     }
     
     public static boolean atualizarAnime(String id, String nome, int temporadas, String dublagemOriginal){
-        String animes = lerArquivo();
-        String[] records = animes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String animes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaAnimes = new ArrayList<>();
         Map<String, String> novoRegistro = new HashMap<>();
@@ -720,11 +841,14 @@ public class Control {
             }
             resultado = rb.toString();
 
-            ControlArquivoTexto arquivo = new ControlArquivoTexto();
-            arquivo.setArquivo("Salvar");
-            arquivo.setTexto(resultado);
-
-            arquivo.escrever(false);
+        try {
+            FileOutputStream outputStream = new FileOutputStream(caminho);
+            outputStream.write(resultado.getBytes());
+            outputStream.close();
+            System.out.println("Novos dados salvos com sucesso em cima do arquivo existente.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao salvar novos dados em cima do arquivo existente: " + e.getMessage());
+        }
             
             return true;
         }else{
@@ -733,8 +857,18 @@ public class Control {
     }
     
     public static String lerAnimePorId(int id ){
-        String animes = lerArquivo();
-        String[] records = animes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String animes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaAnimes = new ArrayList<>();
         
@@ -780,8 +914,18 @@ public class Control {
     
     public static AnimesModel lerAnimePorId2(int id ){
         AnimesModel anime = new AnimesModel();
-        String animes = lerArquivo();
-        String[] records = animes.split("\n\n");
+        String conteudo = "Sem conteudo";
+        
+        String caminho = lerArquivo2();
+        
+        try {
+            conteudo = Files.readString(Paths.get(caminho));
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
+        }
+        
+        //String animes = lerArquivo();
+        String[] records = conteudo.split("\n\n");
         
         List<Map<String, String>> listaAnimes = new ArrayList<>();
         
@@ -820,6 +964,16 @@ public class Control {
         if(controller.ler()) {
             leitura = (controller.getTexto());
         }
+        return leitura;
+    }
+    
+    public static String lerArquivo2(){
+        String leitura = "Não foi possivel ler o arquivo";
+        controller.setArquivo("CHECAR");
+        if(controller.ler()) {
+            leitura = (controller.getPath());
+        }
+        
         return leitura;
     }
     
